@@ -1,0 +1,12 @@
+/* This is an example of external css*/
+
+.apple {
+    color: #333;
+    font-size: 48px;
+    line-height: 1.08365;
+    font-weight: 600;
+    letter-spacing: -.003em;
+    font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    max-width: 980px;
+    margin: 0 auto;
+}

@@ -108,7 +108,7 @@ namespace PokeDL
         }
 
         public List<Pokemon> GetAllPokemon()
-        {
+        {;
             List<Pokemon> listOfPokemon = new List<Pokemon>();
 
             string sqlQuery = @"select * from Pokemon";
