@@ -47,6 +47,52 @@
     * You need two separate teams to do either frontend and backend
 * As with adding more teams, communication can become an issue
     * Since frontend and backend are being developed separately they might not have the same idea on doing a functionality (which you might experience once you start working in teams!)
+
+# REST
+* Stands for Representational State Transfer
+* It is an **architecture style** that uses SOA as its guide
+* It tells you how you should transfer information and how you should communicate with the client
+## What is an API?
+* Application Programming Interface
+* At its essence, it allows you to communicate and transfer information
+## What is a resource?
+* Anything that is being transferred, stored, processed, given, etc. (mostly objects for us)
+## Guiding Principles of Rest
+* Uniform Interface
+    * Your service would have an interface defined by four constraints:
+        * Identification of resources
+            * Able to identify the resource you are trying to access
+            * Ex: An endpoint that ends with /Pokemon/AllPokemon will give all the pokemon resource in the database
+        * Manipulation of resources through representation
+            * Using appropriate action verb to access/manipulate your resource
+            * Ex: GET method to get all pokemons or POST method to add a pokemon
+        * Self-description message
+            * Any other information needed to process the data
+            * Ex: the format the data will come in (JSON, XML, etc.)
+        * Hypermedia as the engine of application state (HATEOAS)
+            * Not implemented as much nowadays
+            * It gives other potential actions the user can take after doing one action
+            * Ex: GetAllPokemon would then give the user potential actions to take such as AddPokemon
+* Client-Server
+    * Client app will evolve separately from the server from the server app without any dependencies on each other
+    * Same concept of when we change our DL from the file system to database without breaking the other projects
+    * Decoupling the services from each other (Matters the most when we do MSA (microservices design pattern))
+    * Same concept of one service being change shouldn't break a different service
+* Layered System
+    * Constraining the interactions of your components to the ones in the next Layer
+    * The service should only have access to components it is dependent on
+    * Ex: The BL can only access the DL and the UI can only access BL and not DL
+* Stateless
+    * Server isn't responsible for storing client state
+    * It will just treat every http request as new or completely different even if it came from the same client or even doing the same http request (refreshing the page)
+    * The client is the only one responsible for storing its own state (like storing cookies or tokens)
+* Cacheable
+    * Resource from the server can be cached if applicable
+    * Meaning the client can store information that was sent by the server
+    * Ex: once you get a list of pokemn, refreshing the page you instantly get that list of pokemon since it was stored already
+* Code on Demand (optional)
+    * Allows client functionality to be extended by downloading and executing code in a form of applets.
+    * Outdated at this point (think of how in the past to play a game, the game has a loading process well that loading process is your computer downloading the scripts to run the game)
     
 # HTTP/HTTPS
 * Hyper Text Transfer Protocol (Secured)
