@@ -92,3 +92,108 @@
 * Allows JavaScript to specifically pick certain elements in the HTML and change/manipulate them somehow based on whatever function you created
 * This is what makes JS a powerful tool to making your html page dynamically change based on whatever the user is doing
 
+# Introduction to JS
+* JavaScript has no correlation with Java language
+    * Basically, saying JavaScript is Java is the same as a ham in a hamster
+* It is functional and object-oriented language
+    * Functional language just means that is uses a lot of functions and you can also use them as variables and parameters inside of other functions
+    * You can think of functions as methods in C# but it doesn't need to be inside of a class
+* Loosely typed
+    * Convenient but annoying to debug weird inconsistent problems down the line
+* JavaScript is both compiled and interpreted
+    * It used to be purely interpreted
+    * It starts as an interpreter, however, once it notices you used the function multiple times, it will compile that code (using JIT compiler) into an optimized native machine code
+        * Only if you are using modern frameworks like Node.js
+* Currently using ECMAScript 6
+    * It introduced object-oriented programming into JS as well as other things
+* Best way to dynamically change your website based on events
+
+## Datatypes
+* Numbers
+* Boolean
+* Strings
+* Objects
+* Null - lack of value
+* Undefined - no value was set meaning you created a variable and didn't set a value to it
+
+## Prototypes
+* It is like a field in C# in a form of a key-value pair
+* Every function (and other things) have prototypes and you can add more properties inside of the prototype
+
+## HTML DOM
+* Document Object Model
+* This is the main model that JavaScript will utilize to manipulate our elements
+* In essence, HTML just converted your elements into objects that Javascript can now manipulate
+
+# Introduction to sending and receiving data in JS
+## AJAX
+* Asynchronous JS and XML
+* Used to grab information only with XML type backend server hence the name
+    * But they want ahead and updated the object to also include JSON to be relevant
+## Fetch
+* Similar to AJAX except less syntaxes or prepping needed to call on backend
+* Main difference from AJAX is it uses promises to achieve asynchrnous operations
+### Promises
+* Represents either the completion or failure of an asynchronous operation
+* Allows you to "setup" what to do after a completion of a promise and get its result and also account for a failure of a promise and what to do using "then()".
+
+## Nice to know with JS
+### Scopes
+* The scope of a variable determines where it has access to
+* Block
+    * Cannot be access from outside {}
+    ```JS
+    {
+        let x = 2;
+    }
+    //Anything outside cannot see that x variable
+    ```
+* Function
+    * Each function you create is a new scope
+    * Kinda like methods in C# in that variables created in the function only stays in that function
+* Global
+    * Can be access anywhere in JS
+    * Var keyword that will give variable a global scope
+    ```JS
+    {
+        var x = 2;
+    }
+    //Anything outside this block scope still has access to x because it is global
+    ```
+* let keyword limits the scope of the variable depending on where it was declared
+    * Mostly use "let" to try your best to avoid conflicting variable names
+
+### Truthy and Falsey
+* In JS, all values have Boolean equivalent to it
+* Meaning you can do "hello"==97.6 perfectly just fine in JS
+#### What counts as false values?
+* FUN0NE - Acryonym to remember it
+* False
+* Undefined
+* Null
+* 0 (-0 and +0 as well)
+* NaN (Not A Number)
+* Empty String
+
+# Security w/ HTTP
+## CORS
+* Cross Origin Resource Sharing
+* It is a way for you to share your resource to other people
+* It is a mechanism that checks the current origin of where that request comes from and see if they have permission to access your resource
+* General workflow: a user will send a request and the browser will send a mini request to first check if you have access, the backend server will recognize the CORS check and will send a response if you do have permission. If so, your browser will send the real request. If not, you will have a CORS error
+
+## CSRF
+* Cross-Site Request Forgery and it is a web security vulnerability that attackers use
+* It bypasses CORS by using you as a user to essentially do a request (usually on a bank account website) to ask to withdraw money from your account and send it they want.
+* Tokens are a way to combat CSRF
+
+## XSS
+* Cross-Site Scripting
+* Some hidden segment of JS coupled with HTML and CSS to emulate a harmless website
+    * Hidden in a way that JS is within HTML doc and this is done through a bunch of tools
+* In its essence, the script’s job is to grab any tokens, cookies, or other session information from the user
+* There are so many ways to achieve XSS that the best way to avoid it is to follow a bunch of rules to prevent it
+    * [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html) Documentation to prevent XSS
+    * You don't need to know all/any the rules but just know there is a free resource called OWASP to check the rules and other vulnerabilities
+
+

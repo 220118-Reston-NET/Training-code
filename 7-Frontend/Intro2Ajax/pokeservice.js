@@ -49,7 +49,11 @@ function getPokemon() {
 function getPokemonFetch() {
     let pokemonName = document.querySelector("#pokemonName").value;
 
+    //Fetch api gives out a promise
+    //A promise will either execute successfully or a failure and that's it
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+        //Then is the operation you want to do after a promise was successful (by default can be configure to also if promise was unsuccessful)
+        //JSON is a useful object in JS that can parse JavaScript objects into JSON objects or vice versa
         .then(result => result.json())
         .then(pokemon => {
             document.querySelector("#pokemonImage").setAttribute("src", pokemon.sprites.front_default);
