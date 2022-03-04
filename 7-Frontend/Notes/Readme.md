@@ -92,39 +92,6 @@
 * Allows JavaScript to specifically pick certain elements in the HTML and change/manipulate them somehow based on whatever function you created
 * This is what makes JS a powerful tool to making your html page dynamically change based on whatever the user is doing
 
-# Introduction to JS
-* JavaScript has no correlation with Java language
-    * Basically, saying JavaScript is Java is the same as a ham in a hamster
-* It is functional and object-oriented language
-    * Functional language just means that is uses a lot of functions and you can also use them as variables and parameters inside of other functions
-    * You can think of functions as methods in C# but it doesn't need to be inside of a class
-* Loosely typed
-    * Convenient but annoying to debug weird inconsistent problems down the line
-* JavaScript is both compiled and interpreted
-    * It used to be purely interpreted
-    * It starts as an interpreter, however, once it notices you used the function multiple times, it will compile that code (using JIT compiler) into an optimized native machine code
-        * Only if you are using modern frameworks like Node.js
-* Currently using ECMAScript 6
-    * It introduced object-oriented programming into JS as well as other things
-* Best way to dynamically change your website based on events
-
-## Datatypes
-* Numbers
-* Boolean
-* Strings
-* Objects
-* Null - lack of value
-* Undefined - no value was set meaning you created a variable and didn't set a value to it
-
-## Prototypes
-* It is like a field in C# in a form of a key-value pair
-* Every function (and other things) have prototypes and you can add more properties inside of the prototype
-
-## HTML DOM
-* Document Object Model
-* This is the main model that JavaScript will utilize to manipulate our elements
-* In essence, HTML just converted your elements into objects that Javascript can now manipulate
-
 # Introduction to sending and receiving data in JS
 ## AJAX
 * Asynchronous JS and XML
@@ -195,5 +162,4 @@
 * There are so many ways to achieve XSS that the best way to avoid it is to follow a bunch of rules to prevent it
     * [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html) Documentation to prevent XSS
     * You don't need to know all/any the rules but just know there is a free resource called OWASP to check the rules and other vulnerabilities
-
 
