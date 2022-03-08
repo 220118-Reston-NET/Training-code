@@ -70,4 +70,14 @@
 
 ## Decorators
 * A decorator is similar to data annotations in C#
-* 
+* It adds special metadata to the class, function, parameter, accessor, or property it is placed over
+* Defined with @expression syntax
+* Different types of decorators
+    * Class Decorator
+        * Ex: @Component, @NgModule, @Injectable
+    * Method Decorator
+        * Ex: @HostListener
+    * Property Decorator
+        * Ex: @Input, @Output
+
+## Directives
