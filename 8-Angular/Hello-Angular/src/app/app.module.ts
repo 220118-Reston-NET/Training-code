@@ -20,17 +20,20 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [ //This will hold our references to modules inside our node_module folder
     BrowserModule,
-    HttpClientModule,
-    FormsModule,
+    HttpClientModule, //Required module to include Http requests
+    FormsModule, //Required to include two-way data binding
     
+    //Required module to start routing
     RouterModule.forRoot([
+      //Path property indicates what endpoint the user needs to specify to go to that component
+      //component property indicates what component to display if the user goes to that endpoing
       {path: "pokeList", component: PokemonListComponent}, //if you want the endpoint to look like website/pokeList
       {path: "profile", component: PokeProfileComponent}, //if you want the endpoint to look like website/profile
       {path: "", component:PokemonListComponent}, //Default component you want to show
       {path: "**", component:NotFoundComponent} //Wildcard for any endpoint that doesn't exist
     ])
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [], //If you don't use @Injector decorator, you would have to specify your services here
+  bootstrap: [AppComponent] //This is the first loaded component/code in the Angular app
 })
 export class AppModule { }
