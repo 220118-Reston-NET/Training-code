@@ -40,7 +40,7 @@ namespace PokeDL
                 command.Parameters.AddWithValue("@pokeType", p_poke.Type);
 
                 //Executes the SQL statement
-                command.ExecuteNonQueryAsync();
+                command.ExecuteNonQuery();
             }
 
             return p_poke;

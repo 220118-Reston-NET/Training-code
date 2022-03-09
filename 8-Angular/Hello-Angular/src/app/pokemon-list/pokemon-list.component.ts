@@ -11,6 +11,7 @@ export class PokemonListComponent {
     title:string = "List of Pokemon";
     src1:string = "https://upload.wikimedia.org/wikipedia/commons/6/6a/Door_Tree_1898.png";
     isVisible:boolean = true;
+    isRatingVisible:boolean = false;
 
     filteredName:string = "";
 
@@ -25,10 +26,17 @@ export class PokemonListComponent {
         this.pokeServ.getAllPokemon().subscribe(result => {
             //The result of a response is then stored in our listOfPokemon property
             console.log(result);
+            result.forEach(poke => poke.rating = this.getRandomInt(5)); //Adds rating to pokemon since Db doesn't have it
+
             this.listOfPokemon = result;
             this.filteredListOfPoke = result;
         });
     }
+
+    getRandomInt(max:number) {
+        return Math.floor(Math.random() * max);
+    }
+      
 
     changeTitle()
     {
@@ -71,5 +79,11 @@ export class PokemonListComponent {
         tempListOfPoke = this.listOfPokemon.filter((pokemon:Pokemon) => pokemon.name.toLowerCase().indexOf(filter) != -1);
 
         return tempListOfPoke;
+    }
+
+    starEventWasTriggered(num1:number)
+    {
+        console.log(num1);
+        this.isRatingVisible = !this.isRatingVisible;
     }
 }
