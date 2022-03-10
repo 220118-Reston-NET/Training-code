@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using PokeBL;
 using PokeDL;
 
@@ -10,7 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IRepository>(repo => new SQLRepository(builder.Configuration.GetConnectionString("Reference2DB")));
+//DbContext class that we just made since we depend on DbContext class
+//options.UseSQlServer() will create DbContextOptions class that holds our connection string information (as well as other options correlating with SQLServer)
+builder.Services.AddDbContext<PokeDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Reference2DB")));
+
+builder.Services.AddScoped<IRepository, DbContextRespository>();
 builder.Services.AddScoped<IPokemonBL, PokemonBL>();
 
 var app = builder.Build();

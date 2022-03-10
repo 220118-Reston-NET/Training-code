@@ -51,7 +51,7 @@ namespace PokeApi.Controllers
             specifically this will handle a GET request from the client and send a http response
         */
         [HttpGet("GetAll")]
-        public async Task<IActionResult> GetAllPokemonAsync()
+        public IActionResult GetAllPokemon()
         {
             try
             {
@@ -59,7 +59,7 @@ namespace PokeApi.Controllers
                 //TryGetValue(checks if the cache still exists and if it does "out listOfPoke" puts that data inside our variable)
                 if (!_memoryCache.TryGetValue("pokeList", out listOfPoke))
                 {
-                    listOfPoke = await _pokeBL.GetAllPokemonAsync();
+                    listOfPoke = _pokeBL.GetAllPokemon();
                     _memoryCache.Set("pokeList", listOfPoke, new TimeSpan(0,0,30));
                 }
                 

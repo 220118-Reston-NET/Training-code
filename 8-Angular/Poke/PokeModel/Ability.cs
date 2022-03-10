@@ -1,8 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace PokeModel
 {
     public class Ability
     {
         //Act as the primary key
+        [Key]
         public int AbId { get; set; }
         public string Name { get; set; }
 
@@ -27,6 +30,10 @@ namespace PokeModel
         
         public int Power { get; set; }
         public int Accuracy { get; set; }
+
+        public int PokemonPokeId { get; set; }
+
+        public List<Pokemon> Pokemons { get; set; }
 
         public Ability()
         {

@@ -1,10 +1,12 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 
 namespace PokeModel
 {
     public class Pokemon
     {
         //Acts as our primary key
+        [Key]
         public int PokeId { get; set; }
         private string _name;
         public string Name
@@ -22,12 +24,12 @@ namespace PokeModel
                 }
         }
         
-        
         public int Level { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
         public int Health { get; set; }
         public int Speed { get; set; }
+        public int SpecialAttack { get; set; }
         public string Type { get; set; }
 
         //Full properties are required to do validation
@@ -54,8 +56,7 @@ namespace PokeModel
                 }
             }
 
-        }
-        
+        }      
 
         //Default constructor to add default values to the properties
         public Pokemon()
@@ -65,10 +66,10 @@ namespace PokeModel
             Attack = 55;
             Defense = 55;
             Health = 55;
-            _abilities = new List<Ability>()
-            {
-                new Ability()
-            };
+            // _abilities = new List<Ability>()
+            // {
+            //     new Ability()
+            // };
         }
 
         //ToString() method is the string version of your object
