@@ -19,7 +19,7 @@ namespace PokeModel
                     }
                     else
                     {
-                        throw new Exception("Cannot have numbers in the name");
+                        throw new ValidationException("Cannot have numbers in the name");
                     }
                 }
         }
