@@ -172,6 +172,7 @@
     * Test spec (basically a unit test) we use it() method
     * Expect() method (Similar to Assert)
         * It is used with conjunction with a marcher that does Boolean comparison
+    * TestBed keyword is used to configure the testing environment with special methods such as .configureTestingModule() that gives the dependencies required to make it work
     * Spying is one way we can mock dependencies inside of Jasmine
 ## Karma
 * Manually run Jasmine test by refreshing the browser in different browsers (such as google chrome, edge, firefox. Etc.) every time we edit our code
