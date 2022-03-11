@@ -1,5 +1,5 @@
 using System.Text.Json;
-using PokeModel;
+using PokeDL.Entities;
 
 namespace PokeDL
 {
