@@ -18,6 +18,7 @@ namespace PokeDL
         protected override void OnModelCreating(ModelBuilder p_modelBuilder)
         {
             //Create self generating Id
+            //Fluent API
             p_modelBuilder.Entity<Pokemon>()
                 .Property(poke => poke.PokeId)
                 .HasColumnName("Id")
