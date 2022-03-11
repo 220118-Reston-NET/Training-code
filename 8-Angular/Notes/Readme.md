@@ -68,7 +68,27 @@
 * Webpack bundling is the process of **bundling** several JS files together into one JS file
 * Angular automatically does webpack bundling for us
 
-## Decorators
+# Data Binding
+* The process in where we share/project values from the components TS file to the HTML or HTML to the TS
+* There are different way for data binding but we will focus on one-way and two-way data binding
+* Interpolation
+    * Syntax using "{{}}"
+    * Can be used to reference properties inside of the TS file of that component
+    * Can also be used to evalue simple mathematical operations
+* Property Binding
+    * Syntax using "[]"
+    * It binds the attributes of a HTML element to the component's property
+* Event Binding
+    * Syntax using "()"
+    * It binds the DOM events such as keystrokes, button clicks, etc. to a method in the component's TS class
+## Two way Data Binding
+* Allows us to bind data from both the component to the view and the view to the component
+* It is achieved by combining both property and event binding together
+* Syntax using "[()]"
+* Angular uses ngModel directive to achive two-way data binding
+* Note: you must import FormsModule package in app.module.ts
+
+# Decorators
 * A decorator is similar to data annotations in C#
 * It adds special metadata to the class, function, parameter, accessor, or property it is placed over
 * Defined with @expression syntax
@@ -80,4 +100,25 @@
     * Property Decorator
         * Ex: @Input, @Output
 
-## Directives
+# Directives
+* It allows us to manipulate the DOM itself
+* Essentially abstracts the old way of document.querySelector() and then changing the information there
+* It acts as a marker on the DOM element that tells Angular to change that DOM element
+* You can also create your own directives in Angular
+## Structural Directive
+* Changes/manipulate the structure of the DOM itself
+* So adding new elements, or removing existing elements, etc.
+* Ex: *ngIf - Removes or adds the element back in depending on the condition
+    *ngFor - Repeats the element multiple times depending on how many things are inside of the array
+    *ngSwitch - similar to c# switch
+## Attribute Directive
+* It is used to change the look and behavior of the DOM elements
+* Ex: ngClass - adds CSS claases to the element dynamically
+      ngStyle - adds CSS style to the element dynamically
+
+# Pipes
+* They provide a way to transform values before it is displayed
+    * Tranform just means you can modify, change, or reformat the values into what you want it to be
+* They are used in conjunction with interpolation so syntax would be {{targetData | pipe}}
+
+# 

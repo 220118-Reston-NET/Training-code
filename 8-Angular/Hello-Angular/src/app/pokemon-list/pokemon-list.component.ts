@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Pokemon } from "../models/pokemon.model";
 import { PokeService } from "../services/poke.service";
 
@@ -7,7 +7,7 @@ import { PokeService } from "../services/poke.service";
     templateUrl: './pokemon-list.component.html',
     styleUrls: ['./pokemon-list.component.css']
 })
-export class PokemonListComponent {
+export class PokemonListComponent implements OnInit {
     title:string = "List of Pokemon";
     src1:string = "https://upload.wikimedia.org/wikipedia/commons/6/6a/Door_Tree_1898.png";
     isVisible:boolean = true;
@@ -22,16 +22,20 @@ export class PokemonListComponent {
         this.listOfPokemon = [];
         this.filteredListOfPoke = [];
 
+    }
+    
+    ngOnInit(): void {
         //getAllPokemon() methods gives an observable that has a subscribe method to start the http request and then handle x amount of responses
         this.pokeServ.getAllPokemon().subscribe(result => {
             //The result of a response is then stored in our listOfPokemon property
             console.log(result);
             result.forEach(poke => poke.rating = this.getRandomInt(5)); //Adds rating to pokemon since Db doesn't have it
-
+    
             this.listOfPokemon = result;
             this.filteredListOfPoke = result;
         });
     }
+
 
     getRandomInt(max:number) {
         return Math.floor(Math.random() * max);
