@@ -71,7 +71,7 @@ Gateway
 # Load Balancing
 * With multiple services running in different containers/servers/nodes, you have a load balancer to handle all the traffic
 * They will balance the outgoing/internal traffic of your MSA system
-Message Queues
+# Message Queues
 * Another mechanism to help with communication in your MSA
 * It stores messages in a queue until they are process especially with a spiky workload
 Circuit Breaker
@@ -82,3 +82,23 @@ Circuit Breaker
 * K8s uses containerized workload and services to handle its MSA processes 
 * Helps us scale our application very easily using container orchestration tool
 * Also helps us monitor our application when scaling without us having to do much of anything
+
+## Container Orchestration
+* Best way to scaling your app in this modern world
+* This will essentially automatically deploy more containers depending on the amount of workload
+* Scaling
+    * It will have multiple containers running the same image and will continue spinning up more (or taking them down) containers as needed
+* Network
+    * Load balancer and service discoverability is with container orchestration
+
+# K8s Architecture
+* Container
+    * A running instance of an image
+* Pods
+    * They are the smallest unit in K8s (since container belongs in docker while pods is strictly from K8s)
+    * May be made up of one or more containers
+    * The pod will keep on running and never stopping and if one pod somehow fails a new pod will come up to replace it
+    * They provide the necessary environment variables needed to run the containers
+    * Each pod will have a unique IP address, storage, config, information for the containers
+* Worker nodes
+    * 
