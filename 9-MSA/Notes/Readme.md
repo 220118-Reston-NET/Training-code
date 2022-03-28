@@ -33,7 +33,6 @@
 * If a service goes down, it doesn’t affect the other services
 * Each service can be developed by a completely different language
 
-
 ## Benefits
 * Scalability
     * Adding new features to a single service shouldn't affect your other services
